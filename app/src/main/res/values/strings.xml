@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Android04_SpinnerDemo</string>
+
+    <string name="city_name">请选择所在城市</string>
+
+    <string-array name="spinner_city">
+        <item>北京</item>
+        <item>上海</item>
+        <item>广州</item>
+        <item>深圳</item>
+        <item>湖南</item>
+    </string-array>
+</resources>
