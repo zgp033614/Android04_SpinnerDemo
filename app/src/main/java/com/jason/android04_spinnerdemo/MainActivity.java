@@ -16,7 +16,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private Spinner spinner_city;
     //private static final String[] cities = new String[]{"北京", "上海", "广州", "深圳", "湖南","湖北"};
-    private ArrayAdapter<String> adapter;
+    private ArrayAdapter<CharSequence> adapter;
     //private SimpleAdapter adapter;
     private List<Map<String, Object>> listData;
 
@@ -42,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
         //1. 构建适配器
         //adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cities);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, cities);
+        //adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, cities);
+        adapter=ArrayAdapter.createFromResource(this, R.array.spinner_city, android.R.layout
+                .simple_spinner_item);
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
 
-//        adapter = new SimpleAdapter(this, listData, R.layout.spinner_item, new String[]{"icon",
-//                "name"}, new int[]{R.id.imageView, R.id.textView});
+        //adapter = new SimpleAdapter(this, listData, R.layout.spinner_item, new String[]{"icon",
+        //                "name"}, new int[]{R.id.imageView, R.id.textView});
 
         //2. 为Spinner绑定适配器
         spinner_city.setAdapter(adapter);
@@ -60,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 // .get("name"), Toast.LENGTH_SHORT)
                 //       .show();
 
-                Toast.makeText(MainActivity.this, "" + adapter.getItem(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "" + adapter.getItem(position), Toast
+                        .LENGTH_SHORT).show();
             }
 
             @Override
