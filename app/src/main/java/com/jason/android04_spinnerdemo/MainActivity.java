@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //1. 构建适配器
-        //adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cities);
         //adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, cities);
         adapter=ArrayAdapter.createFromResource(this, R.array.spinner_city, android.R.layout
                 .simple_spinner_item);
